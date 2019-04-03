@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,8 +14,10 @@ public class Producto {
 
 	@Id
 	@Column(name="id", nullable = false)
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	//@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="generador_id_producto")
+    @SequenceGenerator(name = "generador_id_producto", sequenceName = "prueba_empresa_db.producto_id_seq",allocationSize = 1)
+	private int id;
 	
 	@Column(name="nombre")
 	private String nombre;
@@ -24,10 +27,11 @@ public class Producto {
 	
 	@Column(name="activo", nullable = false)
 	private boolean activo;
-	public long getId() {
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNombre() {

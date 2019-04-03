@@ -12,7 +12,7 @@
 	<artifactId>PruebaEmpresa-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PruebaEmpresa-api</name>
-	<description>API para consumo de PruebaEMPRESA-core</description>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -24,11 +24,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -46,7 +41,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				
 			</plugin>
 		</plugins>
 	</build>

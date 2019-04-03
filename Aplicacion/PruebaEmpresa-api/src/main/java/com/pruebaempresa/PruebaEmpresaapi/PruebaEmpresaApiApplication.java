@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.pruebacontratacion.pruebaempresacore","com.pruebaempresa.PruebaEmpresaapi"})
+@ComponentScan({"com.pruebaempresa","com.prueba.contratacion"})
 public class PruebaEmpresaApiApplication {
 
 	public static void main(String[] args) {

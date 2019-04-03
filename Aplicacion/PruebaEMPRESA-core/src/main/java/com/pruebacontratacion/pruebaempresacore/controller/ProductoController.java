@@ -3,23 +3,29 @@ package com.pruebacontratacion.PruebaEMPRESAcore.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.pruebacontratacion.PruebaEMPRESAcore.model.Producto;
+import com.pruebacontratacion.PruebaEMPRESAcore.repository.IProductoRepo;
 import com.pruebacontratacion.PruebaEMPRESAcore.service.ProductoService;
 
-@Controller
+@RestController
+@RequestMapping("/productos")
 public class ProductoController {
 		@Autowired
 		ProductoService prodService;
-		
+		@Autowired
+		IProductoRepo prodRepo;
+		@GetMapping("/listar")
 		public List<Producto> listar() {
-			List<Producto> listadoProductos = null;
-			listadoProductos = prodService.listarProductos();
-			return listadoProductos;
+			return prodRepo.findByActivo(true);
 		}
-
-		public Producto crearProducto (Producto prod) {
+		@PostMapping("/crear")
+		public Producto crearProducto (@RequestBody Producto prod) {
 			return prodService.crearProducto(prod);
 		}
 }

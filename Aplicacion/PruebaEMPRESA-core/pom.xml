@@ -11,6 +11,7 @@
 	<groupId>com.pruebacontratacion</groupId>
 	<artifactId>PruebaEMPRESA-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>PruebaEMPRESA-core</name>
 	<description>Demo project for Spring Boot</description>
 

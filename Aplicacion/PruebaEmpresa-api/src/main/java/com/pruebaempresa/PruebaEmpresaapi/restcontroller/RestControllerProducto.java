@@ -1,34 +1,33 @@
-package com.pruebaempresa.PruebaEmpresaapi.controller;
+package com.pruebaempresa.PruebaEmpresaapi.restcontroller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pruebacontratacion.pruebaempresacore.controllers.ProductoController;
-import com.pruebacontratacion.pruebaempresacore.model.Producto;
+import com.pruebacontratacion.PruebaEMPRESAcore.controller.ProductoController;
+import com.pruebacontratacion.PruebaEMPRESAcore.model.Producto;
+
 
 @RestController
 @RequestMapping("/productos")
-public class ProductoRestController {
-	@Autowired
-	ProductoController prodController;
+public class RestControllerProducto {
 	
 	@GetMapping("/listar")
     public List<Producto> listar() throws Exception {
+		ProductoController prodController = new ProductoController();
+
 	    List<Producto> listaProductos = prodController.listar();
     	return listaProductos;
 	}
 	
 	@PostMapping("/crear")
-	public String crear(@RequestBody Producto prod) {
+	public Producto crear(@RequestBody Producto prod) {
 		//return prod.toString();
 		ProductoController prodController = new ProductoController();
 		return prodController.crearProducto(prod);
 	}
-
 }
