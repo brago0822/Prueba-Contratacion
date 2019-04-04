@@ -5,11 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.pruebaempresa","com.prueba.contratacion"})
+@ComponentScan({"com.pruebaempresa","com.pruebacontratacion"})
 public class PruebaEmpresaApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PruebaEmpresaApiApplication.class, args);
+		//System.getProperty("java.classpath");
 	}
 
 }
