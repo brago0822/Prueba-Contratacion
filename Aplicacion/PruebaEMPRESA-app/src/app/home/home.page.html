@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    Prueba de Listado oficial de Productos
+    <ion-button router-link="/listarProductos"color="primary" expand="block" size="default">Buscar Activos</ion-button>
+    <ion-button router-link="/crearProductos" color="primary" expand="block" size="default">Crear Producto</ion-button>  </div>
+  <div>
+    <app-crear-producto></app-crear-producto>
+  </div>
+  <div>
+      <app-listar-productos></app-listar-productos>
+    </div>
+</ion-content>
