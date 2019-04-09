@@ -4,23 +4,26 @@
         <div text-center>
           <h4>Nuevo Producto</h4>
         </div>
-        <div padding>
+        <!--<form [formGroup]="createProductoForm" (ngSubmit)="createProducto()">-->
+          <div padding>
+
           <ion-item>
-            <ion-input type="text" placeholder="Nombre"></ion-input>
+            <ion-input name="nombre" type="text" placeholder="Nombre"></ion-input>
           </ion-item>
   
           <ion-item>
-            <ion-input type="text" placeholder="Descripción"></ion-input>
+            <ion-input name="descripcion"type="text" placeholder="Descripción"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Activo</ion-label>
-            <ion-toggle placeholder="Activo" color="primary"></ion-toggle>
+            <ion-toggle name="estado" placeholder="Activo" color="primary"></ion-toggle>
           </ion-item>
         </div>
   
         <div padding>
-          <ion-button size="small" href="/touchid" expand="block">Crear Nuevo Producto</ion-button>
+          <ion-button size="small" type="submit" expand="block">Crear Nuevo Producto</ion-button>
         </div>
+      <!--</form>-->
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService} from '../../services/producto.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-producto',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-producto.component.scss'],
 })
 export class CrearProductoComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {}

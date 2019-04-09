@@ -1,3 +1,16 @@
-<p>
-  listar-productos works! PRUEBA SEGUNDA 
-</p>
+<ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h4>Listado de Productos Activos</h4>
+        </div>
+          <ion-list>
+              <ion-item>Item 1</ion-item>
+            <ion-item button *ngFor="let result of (results | async)">{{result.nombre}}</ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
