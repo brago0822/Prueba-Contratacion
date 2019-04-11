@@ -8,11 +8,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./crear-producto.component.scss'],
 })
 export class CrearProductoComponent implements OnInit {
-  constructor() { }
+ 
+  constructor(private prodService: ProductoService) { }
 
   ngOnInit() {}
 
   OnCreateProduct() {
+    const postData = {
+                    "nombre": "Teclado",
+                    "descripcion": "Teclado Básico",
+                    "activo": true
+    }
     console.log('Llamado a botón crear Producto');
+    this.prodService.crearProducto(postData);
   }
 }

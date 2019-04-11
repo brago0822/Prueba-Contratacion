@@ -14,10 +14,8 @@ export class ListarProductosComponent implements OnInit {
   constructor(private prodService: ProductoService) { }
 
   ngOnInit() {
-    console.log('inicio OnInit Component');
     this.results = null;
     this.results = this.prodService.listarActivosProducto();
-    console.log('Fin OnInit Component');
   }
 
   /*listarActivos() {
