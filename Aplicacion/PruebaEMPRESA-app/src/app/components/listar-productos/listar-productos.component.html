@@ -5,8 +5,7 @@
           <h4>Listado de Productos Activos</h4>
         </div>
           <ion-list>
-              <ion-item>Item 1</ion-item>
-            <ion-item button *ngFor="let result of (results | async)">{{result.nombre}}</ion-item>
+            <ion-item *ngFor="let result of (results | async)">{{result.nombre}}</ion-item>
           </ion-list>
       </ion-col>
     </ion-row>

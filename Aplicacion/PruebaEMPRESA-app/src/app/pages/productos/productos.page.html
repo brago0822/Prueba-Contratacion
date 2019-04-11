@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color = "primary">
     <ion-title>
-      Productos
+      Productos - Página Principal
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,8 +9,8 @@
 <ion-content>
   <div text-center class="ion-padding">
       <h4>Página Inicial de Productos</h4>
-    <ion-button [routerLink]="['/home','listar-productos']"color="primary" expand="block" size="default">Buscar Activos</ion-button>
-    <ion-button [routerLink]="['/home','crear-productos']" color="primary" expand="block" size="default">Crear Producto</ion-button>
+    <ion-button [routerLink]="['/productos','listar-productos']"color="primary" expand="block" size="default">Buscar Activos</ion-button>
+    <ion-button [routerLink]="['/productos','crear-productos']" color="primary" expand="block" size="default">Crear Producto</ion-button>
   </div>
   <!--<div>
     <app-crear-producto></app-crear-producto>
@@ -18,4 +18,5 @@
   <div>
       <app-listar-productos></app-listar-productos>
     </div>-->
+    <!--<app-listar-productos></app-listar-productos>-->
 </ion-content>

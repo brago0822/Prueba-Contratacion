@@ -7,6 +7,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { CrearProductoPage } from './crear-producto.page';
 
+//import { ComponentsModule} from '../../../components/components.module';
+
+import { CrearProductoComponent} from '../../../components/crear-producto/crear-producto.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +26,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CrearProductoPage]
+  declarations: [CrearProductoPage, CrearProductoComponent]
 })
 export class CrearProductoPageModule {}

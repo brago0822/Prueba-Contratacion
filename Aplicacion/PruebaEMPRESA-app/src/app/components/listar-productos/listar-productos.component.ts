@@ -10,20 +10,22 @@ import { Producto } from '../../model/producto';
   styleUrls: ['./listar-productos.component.scss'],
 })
 export class ListarProductosComponent implements OnInit {
-  results: any;//Observable<Producto>; 
-
+  results: Observable<Producto>;
   constructor(private prodService: ProductoService) { }
 
   ngOnInit() {
+    console.log('inicio OnInit Component');
+    this.results = null;
     this.results = this.prodService.listarActivosProducto();
+    console.log('Fin OnInit Component');
   }
 
-  listarActivos() {
+  /*listarActivos() {
     this.results = this.prodService.listarActivosProducto();
-  }
+  }*/
 
   ionViewDidLoad() {
-    this.prodService.listarActivosProducto()
+    /*this.prodService.listarActivosProducto()
     .subscribe(
       (data) => {
         console.log(data);
@@ -32,7 +34,7 @@ export class ListarProductosComponent implements OnInit {
       (error) => {
         console.error(error);
       }
-    );
+    );*/
   }
 
 }

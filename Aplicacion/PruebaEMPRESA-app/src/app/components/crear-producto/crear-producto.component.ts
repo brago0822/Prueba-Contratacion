@@ -8,9 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./crear-producto.component.scss'],
 })
 export class CrearProductoComponent implements OnInit {
-  
   constructor() { }
 
   ngOnInit() {}
 
+  OnCreateProduct() {
+    console.log('Llamado a botón crear Producto');
+  }
 }

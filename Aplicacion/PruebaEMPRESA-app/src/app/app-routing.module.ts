@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home',
+  { path: '', redirectTo: 'productos', pathMatch: 'full' },
+  { path: 'productos',
     children: [
       {
-        path: '', loadChildren: './home/home.module#HomePageModule'
+        //path: '', loadChildren: './home/home.module#HomePageModule'
+        path: '', loadChildren: './pages/productos/productos.module#ProductosPageModule'
       },
       {
-        path: 'crear-productos', loadChildren: './pages/crear-producto/crear-producto.module#CrearProductoPageModule'
+        path: 'crear-productos', loadChildren: './pages/productos/crear-producto/crear-producto.module#CrearProductoPageModule'
       },
       {
-        path: 'listar-productos', loadChildren: './pages/listar-productos/listar-productos.module#ListarProductosPageModule'
+        path: 'listar-productos', loadChildren: './pages/productos/listar-productos/listar-productos.module#ListarProductosPageModule'
       }
     ]
   }
