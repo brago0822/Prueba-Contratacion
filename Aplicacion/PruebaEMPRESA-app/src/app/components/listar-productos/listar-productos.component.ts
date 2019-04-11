@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { ProductoService } from '../../services/producto.service'
-import { Producto } from '../../model/producto'
+import { ProductoService } from '../../services/producto.service';
+import { Producto } from '../../model/producto';
 
 @Component({
   selector: 'app-listar-productos',
@@ -16,14 +16,13 @@ export class ListarProductosComponent implements OnInit {
 
   ngOnInit() {
     this.results = this.prodService.listarActivosProducto();
-
   }
 
-  listarActivos(){
+  listarActivos() {
     this.results = this.prodService.listarActivosProducto();
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     this.prodService.listarActivosProducto()
     .subscribe(
       (data) => {
@@ -33,8 +32,7 @@ export class ListarProductosComponent implements OnInit {
       (error) => {
         console.error(error);
       }
-    )
-    
-}
+    );
+  }
 
 }
