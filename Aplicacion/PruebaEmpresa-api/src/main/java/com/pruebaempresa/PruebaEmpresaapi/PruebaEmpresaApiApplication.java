@@ -10,7 +10,6 @@ public class PruebaEmpresaApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PruebaEmpresaApiApplication.class, args);
-		//System.getProperty("java.classpath");
 	}
 
 }
