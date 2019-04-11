@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService} from '../../services/producto.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
+
+import { Producto } from 'src/app/model/producto';
+
+import { FormBuilder, FormGroup, Validators, NgForm, FormControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-producto',
@@ -8,18 +12,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./crear-producto.component.scss'],
 })
 export class CrearProductoComponent implements OnInit {
- 
-  constructor(private prodService: ProductoService) { }
+  formProducto: FormGroup;
+  productos: FormArray;
 
-  ngOnInit() {}
+  constructor(private prodService: ProductoService,
+              private formBuilder: FormBuilder,
+              private alertController: AlertController
+              )
+  {
+    this.formProducto = this.formBuilder.group({
+      nombre : [null, Validators.required],
+      descripcion : [null, Validators.required],
+      activo : [null, Validators.required]
+    });
+  }
+
+  ngOnInit() { }
 
   OnCreateProduct() {
-    const postData = {
-                    "nombre": "Teclado",
-                    "descripcion": "Teclado Básico",
-                    "activo": true
+    console.log(this.formProducto.value);
+    const result = this.prodService.crearProducto(this.formProducto.value);
+    if (result !== 0) {
+      this.alertController.create({
+        header: 'Producto Creado',
+        message: 'El producto ha sido creado de manera exitosa',
+        buttons: [{
+          text: 'Aceptar'
+        }
+        ]}).then(alertElement => {
+          alertElement.present();
+        });
     }
-    console.log('Llamado a botón crear Producto');
-    this.prodService.crearProducto(postData);
   }
 }

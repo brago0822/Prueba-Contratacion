@@ -7,11 +7,27 @@
 </ion-header>
 
 <ion-content>
-  <div text-center class="ion-padding">
-      <h4>Página Inicial de Productos</h4>
-    <ion-button [routerLink]="['/productos','listar-productos']"color="primary" expand="block" size="default">Buscar Activos</ion-button>
-    <ion-button [routerLink]="['/productos','crear-productos']" color="primary" expand="block" size="default">Crear Producto</ion-button>
-  </div>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Página Principal</ion-card-subtitle>
+          <ion-card-title>Productos</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <div text-center class="ion-padding">
+            <ion-button margin [routerLink]="['/productos','listar-productos']"color="primary" expand="block" size="default">
+              <ion-icon name="list-box"></ion-icon>
+              Buscar Activos
+            </ion-button>
+            <ion-button margin [routerLink]="['/productos','crear-productos']" color="success" expand="block" size="default">
+              <ion-icon name="create"></ion-icon>
+              Crear Producto
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      
+  
   <!--<div>
     <app-crear-producto></app-crear-producto>
   </div>

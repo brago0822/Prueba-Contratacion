@@ -4,26 +4,28 @@
         <div text-center>
           <h4>Nuevo Producto</h4>
         </div>
-        <!--<form [formGroup]="createProductoForm" (ngSubmit)="createProducto()">-->
-          <div padding>
+        <form  [formGroup]="formProducto">
+          <div class="form-group"  padding>
 
           <ion-item>
-            <ion-input name="nombre" type="text" placeholder="Nombre"></ion-input>
+            <ion-input name="nombre" type="text" placeholder="Nombre" formControlName = "nombre"></ion-input>
           </ion-item>
   
           <ion-item>
-            <ion-input name="descripcion"type="text" placeholder="Descripción"></ion-input>
+            <ion-input name="descripcion"type="text" placeholder="Descripción" formControlName = "descripcion"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Activo</ion-label>
-            <ion-toggle name="estado" placeholder="Activo" color="primary"></ion-toggle>
+            <ion-toggle name="estado" placeholder="Activo" color="primary" formControlName = "activo" value=false></ion-toggle>
           </ion-item>
         </div>
   
         <div padding>
           <ion-button (click)="OnCreateProduct()" size="small" type="submit" expand="block">Crear Nuevo Producto</ion-button>
         </div>
-      <!--</form>-->
+      </form>
+      <!--<p>Form value {{ formProducto.value | json }} </p>
+     <p> Form status {{ formProducto.status | json}} </p>-->
       </ion-col>
     </ion-row>
   </ion-grid>
